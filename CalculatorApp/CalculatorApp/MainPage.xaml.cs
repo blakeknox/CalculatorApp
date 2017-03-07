@@ -13,5 +13,15 @@ namespace CalculatorApp
         {
             InitializeComponent();
         }
+
+        private void OnBackspaceButtonClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnDigitButtonClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
