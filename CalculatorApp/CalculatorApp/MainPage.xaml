@@ -2,12 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CalculatorApp"
-             x:Class="CalculatorApp.MainPage">
-
+             x:Class="CalculatorApp.MainPage"
+             BackgroundColor ="Black">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+    <Style x:Key="Number" TargetType="Button">
+             <Setter Property="BackgroundColor" Value="White"/>
+             <Setter Property="TextColor" Value="Black"/>
+             <Setter Property="FontSize" Value="Large"/>
+             <Setter Property="BorderWidth" Value="1"/>
+     </Style>
+     </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
   <Grid RowSpacing="2"
         ColumnSpacing="2"
-        VerticalOptions="Center"
-        HorizontalOptions="Center">
+        >
        <Grid.WidthRequest>
          <OnPlatform x:TypeArguments="x:Double"
                      iOS="180"
@@ -21,54 +31,77 @@
                      Android="300"
                      WinPhone="400"/>
        </Grid.HeightRequest>
-       <Grid.Resources>
-         <ResourceDictionary>
-           <Style TargetType="Button">
-             <Setter Property="FontSize" Value="Large"/>
-             <Setter Property="BorderWidth" Value="1"/>
-           </Style>
-         </ResourceDictionary>
-       </Grid.Resources>
+
       <Label x:Name="DisplayLabel"
               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
               FontSize="Large"
+              TextColor="White"
               LineBreakMode="HeadTruncation"
               VerticalOptions="Center"
               HorizontalTextAlignment="End"/>
        <Button x:Name="backspaceButton"
                Text="&#x21E6;"
-               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                IsEnabled="False"
                Clicked="OnBackspaceButtonClicked"/>
+       <Button x:Name="Clearbutton"
+               Text="C" 
+               Grid.Row="1" Grid.Column="2"
+               Clicked="OnClearButtonClicked"/>
+       <Button x:Name="Multiplybutton"
+               Text="*" StyleId="*"
+               Grid.Row="1" Grid.Column="3"
+               Clicked="OnMultiplyButtonClicked"/>
        <Button Text="7" StyleId="7"
                Grid.Row="2" Grid.Column="0"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
        <Button Text="8" StyleId="8"
                Grid.Row="2" Grid.Column="1"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
        <Button Text="9" StyleId="9"
                Grid.Row="2" Grid.Column="2"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
+       <Button x:Name="Divbutton"
+               Text="Div"
+               Grid.Row="2" Grid.Column="3"
+               Clicked="OnDivButtonClicked"/>
        <Button Text="4" StyleId="4"
                Grid.Row="3" Grid.Column="0"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
        <Button Text="5" StyleId="5"
                Grid.Row="3" Grid.Column="1"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
        <Button Text="6" StyleId="6"
                Grid.Row="3" Grid.Column="2"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
+       <Button x:Name="Addbutton"
+               Text="+"
+               Grid.Row="3" Grid.Column="3"
+               Clicked="OnAddButtonClicked"/>
        <Button Text="1" StyleId="1"
                Grid.Row="4" Grid.Column="0"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
        <Button Text="2" StyleId="2"
                Grid.Row="4" Grid.Column="1"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
        <Button Text="3" StyleId="3"
                Grid.Row="4" Grid.Column="2"
-               Clicked="OnDigitButtonClicked"/>
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
+       <Button x:Name="Minusbutton"
+               Text="-"
+               Grid.Row="4" Grid.Column="3"
+               Clicked="OnMinusButtonClicked"/>
        
        
-</Grid>
-
+    </Grid>
+  </ContentPage.Content>
 </ContentPage>
