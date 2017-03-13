@@ -65,7 +65,7 @@
                Clicked="OnDigitButtonClicked"
                Style="{StaticResource Number}"/>
        <Button x:Name="Divbutton"
-               Text="Div"
+               Text="Div" StyleId="/"
                Grid.Row="2" Grid.Column="3"
                Clicked="OnDivButtonClicked"/>
        <Button Text="4" StyleId="4"
@@ -81,7 +81,7 @@
                Clicked="OnDigitButtonClicked"
                Style="{StaticResource Number}"/>
        <Button x:Name="Addbutton"
-               Text="+"
+               Text="+" StyleId="+"
                Grid.Row="3" Grid.Column="3"
                Clicked="OnAddButtonClicked"/>
        <Button Text="1" StyleId="1"
@@ -97,9 +97,21 @@
                Clicked="OnDigitButtonClicked"
                Style="{StaticResource Number}"/>
        <Button x:Name="Minusbutton"
-               Text="-"
+               Text="-" StyleId="-"
                Grid.Row="4" Grid.Column="3"
                Clicked="OnMinusButtonClicked"/>
+       <Button Text="0" StyleId="0"
+               Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
+       <Button Text="." StyleId="."
+               Grid.Row="5" Grid.Column="2"
+               Clicked="OnDigitButtonClicked"
+               Style="{StaticResource Number}"/>
+       <Button x:Name="Equalbutton"
+               Text="=" StyleId="="
+               Grid.Row="5" Grid.Column="3"
+               Clicked="OnEqualButtonClicked"/>
        
        
     </Grid>
